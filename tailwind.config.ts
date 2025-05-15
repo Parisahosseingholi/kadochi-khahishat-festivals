@@ -62,6 +62,8 @@ export default {
 					'light-coral': '#FFDCD6',
 					navy: '#1A2A56',
 					cream: '#FFFAF0',
+					yellow: '#FFE082',
+					'light-blue': '#D6E4FF',
 				},
 			},
 			borderRadius: {

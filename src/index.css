@@ -55,7 +55,7 @@
 
 @layer components {
   .hero-gradient {
-    @apply bg-gradient-to-r from-kadochi-light-coral via-white to-white;
+    @apply bg-gradient-to-r from-kadochi-light-coral via-white to-kadochi-cream;
   }
   
   .section-title {

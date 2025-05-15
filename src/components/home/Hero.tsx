@@ -16,18 +16,18 @@ const Hero = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
               <Button className="bg-kadochi-coral hover:bg-kadochi-coral/90 text-white px-8 py-6 text-lg font-medium w-full sm:w-auto">
-                ساخت لیست هدیه
+                <Link to="/create-wishlist">ساخت لیست هدیه</Link>
               </Button>
               <Button variant="outline" className="border-kadochi-navy text-kadochi-navy hover:bg-kadochi-navy/5 px-8 py-6 text-lg font-medium w-full sm:w-auto">
-                مرور لیست‌ها
+                <Link to="/browse-wishlists">مرور لیست‌ها</Link>
               </Button>
             </div>
           </div>
-          <div className="md:w-1/2 mt-12 md:mt-0 max-w-lg mx-auto md:mx-0">
+          <div className="md:w-1/2 mt-12 md:mt-0 max-w-lg mx-auto md:mx-0 flex justify-center">
             <img 
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
-              alt="کادوچی - پلتفرم لیست هدایا" 
-              className="rounded-lg shadow-xl animate-fade-in" 
+              src="/lovable-uploads/1d9f9b3c-041f-4e49-8bdc-8fee7bdbd9bf.png" 
+              alt="کادوچی - هدایای با عشق" 
+              className="rounded-lg shadow-xl animate-fade-in max-w-xs md:max-w-sm" 
             />
           </div>
         </div>
