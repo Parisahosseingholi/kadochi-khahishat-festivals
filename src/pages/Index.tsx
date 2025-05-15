@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import WishlistSearch from "@/components/home/WishlistSearch";
+import MobileAppFeature from "@/components/home/MobileAppFeature";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
         <WishlistSearch />
         <HowItWorks />
         <Testimonials />
+        <MobileAppFeature />
         
         {/* CTA Section */}
         <section className="py-16 md:py-20 bg-kadochi-navy text-white">
