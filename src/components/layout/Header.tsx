@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Globe } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { RegistrationDialog } from "@/components/auth/RegistrationDialog";
 import {
   Select,
   SelectContent,
@@ -14,6 +15,7 @@ import {
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const { language, setLanguage } = useLanguage();
 
   const toggleMenu = () => {
@@ -67,10 +69,16 @@ const Header = () => {
               </SelectContent>
             </Select>
           </div>
-          <Button variant="outline" className="border-kadochi-coral text-kadochi-coral hover:bg-kadochi-light-coral/10">
+          <Button 
+            variant="outline" 
+            className="border-kadochi-coral text-kadochi-coral hover:bg-kadochi-light-coral/10"
+          >
             {language === 'fa' ? 'ورود' : 'Login'}
           </Button>
-          <Button className="bg-kadochi-coral hover:bg-kadochi-coral/90 text-white">
+          <Button 
+            className="bg-kadochi-coral hover:bg-kadochi-coral/90 text-white"
+            onClick={() => setIsRegistrationOpen(true)}
+          >
             {language === 'fa' ? 'ثبت نام' : 'Sign Up'}
           </Button>
         </div>
@@ -143,13 +151,25 @@ const Header = () => {
               <Button variant="outline" className="border-kadochi-coral text-kadochi-coral hover:bg-kadochi-light-coral/10 w-full">
                 {language === 'fa' ? 'ورود' : 'Login'}
               </Button>
-              <Button className="bg-kadochi-coral hover:bg-kadochi-coral/90 text-white w-full">
+              <Button 
+                className="bg-kadochi-coral hover:bg-kadochi-coral/90 text-white w-full"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  setIsRegistrationOpen(true);
+                }}
+              >
                 {language === 'fa' ? 'ثبت نام' : 'Sign Up'}
               </Button>
             </div>
           </div>
         </div>
       )}
+      
+      {/* Registration Dialog */}
+      <RegistrationDialog 
+        open={isRegistrationOpen} 
+        onOpenChange={setIsRegistrationOpen} 
+      />
     </header>
   );
 };
