@@ -1,4 +1,6 @@
-import { useState } from 'react';
+
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Input } from "@/components/ui/input";
@@ -78,8 +80,17 @@ const getOccasionName = (occasion: string) => {
 };
 
 const BrowseWishlists = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const searchQueryParam = queryParams.get('search') || '';
+
+  const [searchTerm, setSearchTerm] = useState(searchQueryParam);
   const [occasionFilter, setOccasionFilter] = useState('');
+
+  useEffect(() => {
+    // Update search term when URL changes
+    setSearchTerm(searchQueryParam);
+  }, [searchQueryParam]);
 
   const filteredWishlists = wishlists.filter(wishlist => {
     const matchesSearch = wishlist.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
