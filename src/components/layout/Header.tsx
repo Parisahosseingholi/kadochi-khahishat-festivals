@@ -33,25 +33,6 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 space-x-reverse">
-            <Link to="/" className="text-kadochi-navy hover:text-kadochi-coral transition-colors">
-              {language === 'fa' ? 'خانه' : 'Home'}
-            </Link>
-            <Link to="/create-wishlist" className="text-kadochi-navy hover:text-kadochi-coral transition-colors">
-              {language === 'fa' ? 'ساخت لیست هدیه' : 'Create Wishlist'}
-            </Link>
-            <Link to="/browse-wishlists" className="text-kadochi-navy hover:text-kadochi-coral transition-colors">
-              {language === 'fa' ? 'مرور لیست‌ها' : 'Browse Wishlists'}
-            </Link>
-            <Link to="/seller-partnership" className="text-kadochi-navy hover:text-kadochi-coral transition-colors">
-              {language === 'fa' ? 'همکاری فروشندگان' : 'Seller Partnership'}
-            </Link>
-            <Link to="/contact" className="text-kadochi-navy hover:text-kadochi-coral transition-colors">
-              {language === 'fa' ? 'تماس با ما' : 'Contact Us'}
-            </Link>
-          </nav>
-
           {/* Auth Buttons and Language Selector - Desktop */}
           <div className="hidden md:flex items-center space-x-4 space-x-reverse">
             <div className="flex items-center ml-4">
@@ -118,42 +99,7 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 py-4 shadow-md animate-fade-in">
           <div className="container-custom flex flex-col space-y-4">
-            <Link 
-              to="/" 
-              className="text-kadochi-navy hover:text-kadochi-coral transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {language === 'fa' ? 'خانه' : 'Home'}
-            </Link>
-            <Link 
-              to="/create-wishlist" 
-              className="text-kadochi-navy hover:text-kadochi-coral transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {language === 'fa' ? 'ساخت لیست هدیه' : 'Create Wishlist'}
-            </Link>
-            <Link 
-              to="/browse-wishlists" 
-              className="text-kadochi-navy hover:text-kadochi-coral transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {language === 'fa' ? 'مرور لیست‌ها' : 'Browse Wishlists'}
-            </Link>
-            <Link 
-              to="/seller-partnership" 
-              className="text-kadochi-navy hover:text-kadochi-coral transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {language === 'fa' ? 'همکاری فروشندگان' : 'Seller Partnership'}
-            </Link>
-            <Link 
-              to="/contact" 
-              className="text-kadochi-navy hover:text-kadochi-coral transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {language === 'fa' ? 'تماس با ما' : 'Contact Us'}
-            </Link>
-            <div className="flex flex-col space-y-2 pt-2 border-t border-gray-100">
+            <div className="flex flex-col space-y-2 pt-2">
               <Button variant="outline" className="border-kadochi-coral text-kadochi-coral hover:bg-kadochi-light-coral/10 w-full">
                 {language === 'fa' ? 'ورود' : 'Login'}
               </Button>
