@@ -5,12 +5,13 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const Hero = () => {
   const { language } = useLanguage();
+  const isRtl = language === 'fa';
   
   return (
     <section className="hero-gradient py-16 md:py-24">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 text-center md:text-right">
+          <div className={`md:w-1/2 text-center ${isRtl ? 'md:text-right' : 'md:text-left'}`}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-kadochi-navy mb-6 leading-tight">
               {language === 'fa' 
                 ? 'رویاهای خود را با <span className="text-kadochi-coral">کادوچی</span> به اشتراک بگذارید' 
@@ -21,7 +22,7 @@ const Hero = () => {
                 ? 'پلتفرم ساخت و اشتراک‌گذاری لیست هدایای تولد، عروسی، و سوغاتی برای ایرانیان سراسر جهان'
                 : 'The platform for creating and sharing birthday, wedding, and souvenir gift lists for Iranians worldwide'}
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
+            <div className={`flex flex-col sm:flex-row items-center ${isRtl ? 'justify-center md:justify-end sm:space-x-4 sm:space-x-reverse' : 'justify-center md:justify-start sm:space-x-4'} space-y-4 sm:space-y-0`}>
               <Button className="bg-kadochi-coral hover:bg-kadochi-coral/90 text-white px-8 py-6 text-lg font-medium w-full sm:w-auto">
                 <Link to="/create-wishlist">
                   {language === 'fa' ? 'ساخت لیست هدیه' : 'Create Gift List'}

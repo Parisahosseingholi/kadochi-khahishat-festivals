@@ -12,9 +12,10 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const Index = () => {
   const { language } = useLanguage();
+  const isRtl = language === 'fa';
   
   return (
-    <div className={`min-h-screen flex flex-col ${language === 'fa' ? 'rtl' : 'ltr'}`}>
+    <div className={`min-h-screen flex flex-col ${isRtl ? 'rtl text-right' : 'ltr text-left'}`}>
       <Header />
       <main className="flex-grow">
         <Hero />
@@ -36,7 +37,7 @@ const Index = () => {
                 ? 'به هزاران ایرانی بپیوندید که با کادوچی، تجربه هدیه دادن و هدیه گرفتن را متحول کرده‌اند.'
                 : 'Join thousands of Iranians who have revolutionized the gift-giving and receiving experience with Kadochi.'}
             </p>
-            <div className={`flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 ${language === 'fa' ? 'sm:space-x-reverse' : ''}`}>
+            <div className={`flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 ${isRtl ? 'sm:space-x-4 sm:space-x-reverse' : 'sm:space-x-4'}`}>
               <Button className="bg-kadochi-coral hover:bg-kadochi-coral/90 text-white px-8 py-6 text-lg font-medium">
                 <Link to="/create-wishlist">
                   {language === 'fa' ? 'ساخت لیست هدیه' : 'Create Gift List'}
